@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regalo Especial</title>
+    <!-- Enlace para Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container hidden">
+        <button id="sorpresaBtn" onclick="mostrarSorpresa()">&#127873;¡Sorpresa para ti!&#127873;</button>
+        <p id="mensaje" class="hidden">&#10084;Ojala estar toda la vida a tu lado MI AMOR&#10084;</p>
+        <div id="qrCode" class="hidden">
+            <img src="sonidos/png.png" alt="QR Code" />
+        </div>
+    </div>
+
+    <!-- Música de fondo -->
+    <audio id="musicaInicial" src="sonidos/quiero.mp3" preload="auto"></audio>
+    <audio id="musicaTambores" src="sonidos/sorpresa.mp3" preload="auto"></audio>
+    <audio id="musicaFinal" src="sonidos/black.mp3" preload="auto"></audio>
+
+    <!-- Agregar script de canvas-confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
