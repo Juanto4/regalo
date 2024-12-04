@@ -1,0 +1,162 @@
+/* Estilos generales y para el fondo animado */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff61a6, #ff91a0, #ffb3c1, #ff6a00);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente predeterminada */
+}
+
+/* Animación de fondo */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animación fade-in con deslizamiento */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contenedor del recuadro con los elementos */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    width: 80%; 
+    max-width: 400px;
+}
+
+/* Estilos para el botón con fuente "Dancing Script" */
+button {
+    background-color: #ff61a6;
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-family: 'Dancing Script', cursive; /* Fuente bonita para el botón */
+}
+
+button:hover {
+    background-color: #ff91a0;
+    transform: translateY(-5px);
+}
+
+/* Estilo para el QR */
+#qrCode {
+    display: none;
+    margin-top: 20px;
+}
+
+#qrCode img {
+    width: 150px; 
+    height: auto;
+    margin-top: 20px; 
+}
+
+/* Estilo para el mensaje con fuente "Dancing Script" */
+#mensaje {
+    font-size: 18px; /* Aumentamos el tamaño del texto */
+    font-weight: bold;
+    margin-top: 20px;
+    color: #ff61a6;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif; /* Fuente clara y legible para el mensaje */}
+
+/* Corazones flotantes animados */
+@keyframes heartAnimation {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+        top: 100%;
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 0;
+        top: 0;
+    }
+}
+
+.heart {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url('heart.png');
+    background-size: cover;
+    animation: heartAnimation 6s infinite ease-in;
+    opacity: 0;
+    animation-delay: calc(-1s * var(--i));
+}
+
+.heart:nth-child(odd) {
+    animation-duration: 7s;
+}
+
+.heart:nth-child(even) {
+    animation-duration: 5s;
+}
+
+/* Confeti */
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #ff61a6;
+    animation: confettiFall 2s linear forwards;
+    opacity: 0;
+    border-radius: 50%;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Clase para ocultar elementos inicialmente */
+.hidden {
+    display: none;
+}
+
+/* Animación para hacer que el contenedor tiemble */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.5s ease infinite;
+}
